@@ -33,17 +33,17 @@ function unityShowBanner(msg, type) {
 }
 
 var buildUrl = "mazerace";
-var loaderUrl = buildUrl + "/mazerace.loader.js";
-var config = {
-	dataUrl: buildUrl + "/mazerace.data.gz",
-	frameworkUrl: buildUrl + "/mazerace.framework.js.gz",
-	codeUrl: buildUrl + "/mazerace.wasm.gz",
-	streamingAssetsUrl: "StreamingAssets",
-	companyName: "ivovi",
-	productName: "MazeRace",
-	productVersion: "1.0",
-	showBanner: unityShowBanner,
-};
+      var loaderUrl = buildUrl + "/mazerace.loader.js";
+      var config = {
+        dataUrl: buildUrl + "/mazerace.data.br",
+        frameworkUrl: buildUrl + "/mazerace.framework.js.br",
+        codeUrl: buildUrl + "/mazerace.wasm.br",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "ivovi",
+        productName: "MazeRace",
+        productVersion: "1.0",
+        showBanner: unityShowBanner,
+      };
 
 // By default Unity keeps WebGL canvas render target size matched with
 // the DOM size of the canvas element (scaled by window.devicePixelRatio)
