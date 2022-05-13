@@ -35,9 +35,9 @@ function unityShowBanner(msg, type) {
 var buildUrl = "mazerace";
 var loaderUrl = buildUrl + "/mazerace.loader.js";
 var config = {
-	dataUrl: buildUrl + "/mazerace.data.br",
-	frameworkUrl: buildUrl + "/mazerace.framework.js.br",
-	codeUrl: buildUrl + "/mazerace.wasm.br",
+	dataUrl: buildUrl + "/mazerace.data.gz",
+	frameworkUrl: buildUrl + "/mazerace.framework.js.gz",
+	codeUrl: buildUrl + "/mazerace.wasm.gz",
 	streamingAssetsUrl: "StreamingAssets",
 	companyName: "ivovi",
 	productName: "MazeRace",
