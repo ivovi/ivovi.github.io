@@ -20,7 +20,8 @@ for(var i = 0; i < collapsibles.length; i++) {
 		} else {
 			content.style.display = "block";
 			this.style.borderRadius = "15px 15px 0px 0px";
-			this.scrollIntoView();
+			var scrollPos = $(".canvas_border").offset().top - 10;
+			window.scrollTo({top: scrollPos, behavior: "smooth"});
 			$(".collapsible_arrow").toggle();
 		}
 	});
