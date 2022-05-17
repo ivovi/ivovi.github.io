@@ -4,25 +4,65 @@
 		<meta charset="utf-8">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>ivovi's Place</title>
-		<link rel = "stylesheet" href = "css/style.css" type = "text/css" />
-		<script type = "text/javascript" src = "js/main.js" defer></script>
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<link rel="stylesheet" href="css/bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/style.css" type="text/css" />
+		<link rel="stylesheet" href="unitydata/style.css" />
+		<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript" src="css/bootstrap-5.2.0-beta1-dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/main.js" defer></script>
 	</head>
 	<body>
-		<p>Hello and welcome to ivovi's place!</p>
-		<div id="unity-container" class="unity-desktop">
-		  <canvas id="unity-canvas" width=1280 height=896></canvas>
-		  <div id="unity-loading-bar">
-			<div id="unity-logo"></div>
-			<div id="unity-progress-bar-empty">
-			  <div id="unity-progress-bar-full"></div>
+		<div class="container-fluid intro_header">
+			<div class="row g-0 intro_text">
+				<div class="col-md-12">
+					<h1>Hello and welcome to <b>ivovi</b>'s place!</h1>
+				</div>
 			</div>
-		  </div>
-		  <div id="unity-warning"> </div>
-		  <div id="unity-footer">
-			<div id="unity-webgl-logo"></div>
-			<div id="unity-fullscreen-button"></div>
-			<div id="unity-build-title">MazeRace</div>
-		  </div>
+			<div class="row g-0 align-items-center">
+				<div class="col-md-8">
+					<h1>
+						I'm <b>Ivo</b>, a software engineer with a passion for game development, networking, and artificial intelligence. I hope you enjoy your stay!
+					</h1>
+				</div>
+				<div class="col-md-4" align="right">
+					<img class="intro_icon" src="images/ivovi_walrus.png" alt="Walrus Pixelart" />
+				</div>
+			</div>
+			<div class="row g-0 scroll_arrow">
+				<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#444452" class="bi bi-arrow-down" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+				</svg>
+			</div>
 		</div>
+		<div class="container-fluid game_container" align="center">
+			<div class="row g-0 align-items-center py-5">
+				<h1><b>My Games:</b></h1>
+			</div>
+			<div class="row g-0">
+				<button type="button" class="maze_race collapsible">
+					<span class="maze_race_text">Maze Race</span>
+					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#000000" class="bi bi-chevron-down collapsible_arrow" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+					</svg>
+					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#000000" class="bi bi-chevron-up collapsible_arrow" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+					</svg>
+				</button>
+				<div id="unity-container" class="unity-desktop collapsible_content">
+					  <canvas id="unity-canvas" width=1280 height=896></canvas>
+					  <div id="unity-loading-bar">
+							<div id="unity-logo"></div>
+							<div id="unity-progress-bar-empty">
+								<div id="unity-progress-bar-full"></div>
+							</div>
+					  </div>
+					  <div id="unity-warning"> </div>
+				</div>
+			</div>
+		</div>
+		<footer>
+		
+		</footer>
 	</body>
 </html>

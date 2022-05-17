@@ -1,0 +1,91 @@
+@font-face {
+    font-family: 'raleway';
+    src: url('fonts/raleway.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'mazerace';
+	src: url('fonts/mazerace.ttf') format('truetype');
+	font-style: normal;
+}
+
+h1, h2 {
+	font-family: "raleway", Helvetica, Arial, sans-serif;
+	color: #444452;
+	line-height: 1.5;
+	font-weight: 300;
+	font-size: 2.8rem;
+}
+
+h1 > b, h2 > b {
+	font-weight: 700;
+}
+
+footer {
+	margin-top: 15vh;
+}
+
+.intro_header {
+	height: 100vh;
+	padding: 20vh 20vw;
+}
+
+.intro_text {
+	padding: 7.5vh 0;
+}
+
+.intro_icon {
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -webkit-crisp-edges;
+	image-rendering: pixelated;
+	image-rendering: crisp-edges;
+}
+
+.scroll_arrow {
+	height: 64px;
+	position: absolute;
+	bottom: 3%;
+	left: 50%;
+	transform: translate(-50%, 0);
+	transition: opacity 0.5s;
+}
+
+.game_container {
+	padding: 0 15rem;
+	max-width: 2000px;
+}
+
+.collapsible_arrow {
+	float: right;
+	margin-right: 1em;
+	margin-top: 0.1em;
+}
+
+.maze_race {
+	background-color: #999999;
+	width: 100%;
+	border: none;
+	border-radius: 15px;
+	font-family: "mazerace", "raleway", Helvetica, Arial, sans-serif;
+	font-size: 2.4rem;
+	transition: background-color 0.5s;
+}
+
+.maze_race:hover {
+	background-color: #666666;
+}
+
+.maze_race_text {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.collapsible_content {
+	display: none;
+	overflow: hidden;
+	background-color: #d9d9d9;
+	padding: 4rem 3rem;
+	border-radius: 0px 0px 15px 15px;
+}

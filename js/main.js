@@ -1,3 +1,31 @@
+document.addEventListener('scroll', function(scroll) {
+	if(window.pageYOffset < 150) {
+		$(".scroll_arrow").css("opacity", "1");
+	} else {
+		$(".scroll_arrow").css("opacity", "0");
+	}
+});
+
+$(".collapsible_arrow").eq(1).toggle();
+var collapsibles = document.getElementsByClassName("collapsible");
+
+for(var i = 0; i < collapsibles.length; i++) {
+	collapsibles[i].addEventListener("click", function() {
+		this.classList.toggle("active");
+		var content = this.nextElementSibling;
+		if(content.style.display === "block") {
+			content.style.display = "none";
+			this.style.borderRadius = "15px";
+			$(".collapsible_arrow").toggle();
+		} else {
+			content.style.display = "block";
+			this.style.borderRadius = "15px 15px 0px 0px";
+			this.scrollIntoView();
+			$(".collapsible_arrow").toggle();
+		}
+	});
+}
+
 var container = document.querySelector("#unity-container");
 var canvas = document.querySelector("#unity-canvas");
 var loadingBar = document.querySelector("#unity-loading-bar");
