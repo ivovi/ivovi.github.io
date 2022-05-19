@@ -62,8 +62,9 @@ footer {
 }
 
 .collapsible_arrow {
-	float: right;
-	margin-right: 1em;
+	display:inline-block;
+	position: absolute;
+	right: 1em;
 	margin-top: 0.1em;
 }
 
@@ -75,6 +76,8 @@ footer {
 	font-family: "mazerace", "raleway", Helvetica, Arial, sans-serif;
 	font-size: 2.4rem;
 	transition: background-color 0.5s;
+	text-align: center;
+	position: relative;
 }
 
 .maze_race:hover {
@@ -82,9 +85,7 @@ footer {
 }
 
 .maze_race_text {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
+	display:inline-block;
 }
 
 .collapsible_content {
