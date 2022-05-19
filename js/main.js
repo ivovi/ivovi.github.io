@@ -105,7 +105,7 @@ var buildUrl = "mazerace";
         streamingAssetsUrl: "StreamingAssets",
         companyName: "ivovi",
         productName: "MazeRace",
-        productVersion: "1.1",
+        productVersion: "1.2",
         showBanner: unityShowBanner,
       };
 
