@@ -27,6 +27,42 @@ for(var i = 0; i < collapsibles.length; i++) {
 	});
 }
 
+$(function() {
+	resizeCanvas();
+});
+
+$(window).on('resize', function() {
+	resizeCanvas();
+});
+
+function convertRemToPixels(rem) {
+	return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+}
+
+function resizeCanvas() {
+	var canvas = $("#unity-canvas");
+	var windowWidth = document.body.clientWidth;
+	// Add padding and margin for game container object (from sides of screen to content).
+	var outsideBoundarySides = parseInt($(".game_container").css("paddingRight").replace("px", ""));
+	outsideBoundarySides = outsideBoundarySides + parseInt($(".game_container").css("marginRight").replace("px", ""));
+	// Add padding from side of collapsible content to canvas.
+	outsideBoundarySides = outsideBoundarySides + parseInt($(".collapsible_content").css("paddingRight").replace("px", ""));
+	// Double to include the left side as well.
+	outsideBoundarySides = outsideBoundarySides * 2;
+	// Work out canvas width (also subtract 10 for border size).
+	var expectedCanvasWidth = windowWidth - outsideBoundarySides - 10;
+	// Compare to max allowed width
+	if(expectedCanvasWidth > 1280) {
+		expectedCanvasWidth = 1280;
+	}
+	if(canvas.width() != expectedCanvasWidth) {
+		canvas.width(expectedCanvasWidth);
+		// Calculate canvas height using aspect ratio.
+		var canvasHeight = (expectedCanvasWidth / 10) * 7;
+		canvas.height(canvasHeight);
+	}
+}
+
 var container = document.querySelector("#unity-container");
 var canvas = document.querySelector("#unity-canvas");
 var loadingBar = document.querySelector("#unity-loading-bar");
@@ -69,7 +105,7 @@ var buildUrl = "mazerace";
         streamingAssetsUrl: "StreamingAssets",
         companyName: "ivovi",
         productName: "MazeRace",
-        productVersion: "1.0",
+        productVersion: "1.1",
         showBanner: unityShowBanner,
       };
 
@@ -86,9 +122,6 @@ if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
 	// and default/override low DPI mode on mobile browsers.
 	config.devicePixelRatio = 1;
 	unityShowBanner('WebGL builds are not supported on mobile devices.');
-} else {
-	canvas.style.width = "1280px";
-	canvas.style.height = "896px";
 }
 loadingBar.style.display = "block";
 
@@ -104,3 +137,10 @@ script.onload = () => {
 	});
 };
 document.body.appendChild(script);
+
+document.addEventListener('wheel', onScroll, false);
+document.addEventListener('mousemove', onMouse, false);
+var content = document.getElementsByClassName('unity-desktop');
+
+function onMouse() { content[0].style['pointer-events'] = 'auto'; }
+function onScroll() { content[0].style['pointer-events'] = 'none'; }
